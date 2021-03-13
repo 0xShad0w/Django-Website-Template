@@ -1,10 +1,12 @@
 {% if topic_questions %}
     {% for topic, questions in topic_questions.items %}
         <p> 
-            {{topic.topic_name}} 
+            <b>{{topic.topic_name}} </b>
             <ul>
                 {% for q in questions %}
-                    <li> {{q.question_question}}    
+                    <li> <b> QUESTION: </b>{{q.question_question}}    
+                    <article> <b> ANSWER: </b> {{q.question_answer}} </article>
+                    <br>
                 {% endfor %}
             </ul>
         </p>
