@@ -1,0 +1,15 @@
+{% if topic_questions %}
+    {% for topic, questions in topic_questions.items %}
+        <p> 
+            {{topic.topic_name}} 
+            <ul>
+                {% for q in questions %}
+                    <li> {{q.question_question}}    
+                {% endfor %}
+            </ul>
+        </p>
+    {% endfor %}
+    
+{% else %}
+<p> NO FAQ Questions</p>
+{% endif %}
