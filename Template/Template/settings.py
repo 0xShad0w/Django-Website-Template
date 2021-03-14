@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'core',
     'FAQ.apps.FaqConfig',
     'tinymce',
+    'Template',
 ]
 
 MIDDLEWARE = [
