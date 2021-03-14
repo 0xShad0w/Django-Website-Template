@@ -1,17 +1,54 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
 {% if topic_questions %}
-    {% for topic, questions in topic_questions.items %}
-        <p> 
-            <b>{{topic.topic_name}} </b>
-            <ul>
-                {% for q in questions %}
-                    <li> <b> QUESTION: </b>{{q.question_question}}    
-                    <article> <b> ANSWER: </b> {{q.question_answer}} </article>
-                    <br>
-                {% endfor %}
-            </ul>
-        </p>
-    {% endfor %}
-    
-{% else %}
-<p> NO FAQ Questions</p>
+
+<!-- accordion for the topics -->
+<div class="panel-group" id="accordion_topics">
+
+	{% for topic, questions in topic_questions.items %}
+    	<div class="panel panel-default">
+    		<div class="panel-heading">
+    			<h4 class="panel-title">
+    				<a data-toggle="collapse" data-parent="#accordion_topics" href="#collapse_topic{{topic.id}}">
+        				{{topic.topic_name}}
+    				</a>
+    			</h4>
+    		</div>
+    		<div id="collapse_topic{{topic.id}}" class="panel-collapse collapse">
+    		
+    			<div class="panel-body">
+                    <ul>
+                    
+                        <!-- according for the questions, per topic -->
+                        <div class="panel-group" id="accordion_questions{{topic.id}}">
+                        	{% for q in questions %}
+                            	<div class="panel panel-default">
+                            		<div class="panel-heading">
+                            			<h4 class="panel-title">
+                            				<a data-toggle="collapse" data-parent="#accordion_questions{{topic.id}}" href="#collapse_question{{q.id}}">
+                                				{{q.question_question}}
+                            				</a>
+                            			</h4>
+                            		</div>
+                            		<div id="collapse_question{{q.id}}" class="panel-collapse collapse">
+                            			<div class="panel-body">
+                                            {{q.question_answer}}
+                            			</div>
+                            		</div>
+                            	</div>
+                        	{% endfor %}      
+                        </div>              
+                        
+                    </ul>
+    			</div>
+    		</div>
+    	</div>
+	{% endfor %}
+	
+</div>
 {% endif %}
