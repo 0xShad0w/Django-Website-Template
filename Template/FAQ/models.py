@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ class Question(models.Model):
             on_delete=models.CASCADE
         )
     question_question = models.CharField(max_length=200)
-    question_answer = models.TextField()
+    question_answer = HTMLField()
     
     def __str__(self):
         return f"{self.question_topic} - {self.question_question}"

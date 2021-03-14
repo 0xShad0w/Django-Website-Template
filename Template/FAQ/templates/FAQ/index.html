@@ -5,6 +5,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
+<h1> F.A.Q. </h1>
+
 {% if topic_questions %}
 
 <!-- accordion for the topics -->
@@ -37,7 +39,7 @@
                             		</div>
                             		<div id="collapse_question{{q.id}}" class="panel-collapse collapse">
                             			<div class="panel-body">
-                                            {{q.question_answer}}
+                                            {{q.question_answer|safe}}
                             			</div>
                             		</div>
                             	</div>
