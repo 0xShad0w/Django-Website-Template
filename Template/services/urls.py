@@ -12,4 +12,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('<int:service_id>/', views.service_view, name='service'),
 ]

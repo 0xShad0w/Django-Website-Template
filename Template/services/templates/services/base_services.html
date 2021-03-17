@@ -1,10 +1,54 @@
 {% extends "base.html" %}
 
 {% block content %}
-    CODE BUEDA CODE MEGA BUEDA CODE
-    CODE BUEDA CODE MEGA BUEDA CODE
-    CODE BUEDA CODE MEGA BUEDA CODE
-    CODE BUEDA CODE MEGA BUEDA CODE
-    CODE BUEDA CODE MEGA BUEDA CODE
-    CODE BUEDA CODE MEGA BUEDA CODE
+{% if service %}
+
+    {% if service.show_intro %}
+        <h2> Intro </h2>
+        <p>{{service.intro|safe}}</p>
+    {% endif %}
+    
+    {% if service.show_process %}
+        <h2> Our Process </h2>
+        <p>{{service.process|safe}}</p>
+    {% endif %}
+    
+    {% if service.show_results %}
+        <h2> Our Results </h2>
+        <p>{{service.results|safe}}</p>
+    {% endif %}
+    
+    {% if service.show_its_time %}
+        <h2> It's Time </h2>
+        <p>{{service.its_time|safe}}</p>
+    {% endif %}
+    
+    {% if service.show_expert_advice %}
+        <h2> Expert Advice </h2>
+        <p>{{service.expert_advice|safe}}</p>
+    {% endif %}
+    
+    {% if service.show_approach %}
+        <h2> Our Approach </h2>
+        <p>{{service.approach|safe}}</p>
+    {% endif %}
+    
+    {% if service.show_equipment %}
+        <h2> Our Equipment </h2>
+        <p>{{service.equipment|safe}}</p>
+    {% endif %}
+    
+    {% if service.show_guarantee %}
+        <h2> Guarantee </h2>
+        <p>{{service.guarantee|safe}}</p>
+    {% endif %}
+    
+    {% if service.show_why_us %}
+        <h2> Choose Dan Dan The Big Man !  </h2>
+        <p>{{service.why_us|safe}}</p>
+    {% endif %}
+    
+{% else %}
+    <p> no service to display </p>
+{% endif %}
 {% endblock content %}
