@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Topic, Question
 
 
-def index(request):
+def FAQ_index(request):
     
     topic_questions = {}
     

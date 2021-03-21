@@ -72,7 +72,7 @@
     <main>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
             <div class="container-xl">
-                <a class="navbar-brand" href="#">Template Website</a>
+                <a class="navbar-brand" href="{% url 'homepage' %}">Template Website</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -88,7 +88,7 @@
                             <a class="nav-link" href="#">ABOUT US</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="{% url 'service_index' %}"  id="dropdown07XL" data-bs-toggle="dropdown"
                                 aria-expanded="false">SERVICES</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
                                 <li><a class="dropdown-item" href="#">Service 1</a></li>
@@ -109,7 +109,7 @@
                             <a class="nav-link" href="#">BLOG</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">FAQ</a>
+                            <a class="nav-link" href="{% url 'FAQ_index' %}">FAQ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">CONTACT US</a>

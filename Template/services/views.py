@@ -3,7 +3,7 @@ from .models import Service
 
 # Create your views here.
 
-def index(request):
+def service_index(request):
 
 
     return render(request, 'services/base_services.html')
